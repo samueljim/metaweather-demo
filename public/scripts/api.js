@@ -2,6 +2,8 @@
 
 var proxy, api, url;
 api = 'https://www.metaweather.com/api/';
+// i'm running a dedicated proxy to get around cross origin
+// This isn't ideal but in order for browsers headers to be removed it needs to hit a server
 proxy = ''
 proxy = 'http://proxy.samueljim.com/'
 
@@ -10,9 +12,6 @@ proxy = 'http://proxy.samueljim.com/'
 // xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
 // xhr.setRequestHeader('Access-Control-Allow-Headers', 'X-Requested-With');
 // xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-function newCorsHTTPXHR(type, url) {
-
-}
 
 // MAIN --------------------------------------------------------
 // MetaWeather object is made for simple reused of the code
