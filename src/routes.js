@@ -1,4 +1,6 @@
-import { Router } from 'express';
+import {
+  Router
+} from 'express';
 
 const routes = Router();
 
@@ -6,20 +8,18 @@ const routes = Router();
  * GET home page
  */
 routes.get('/', (req, res) => {
-  res.render('index', { title: 'Express Babel' });
+  res.render('index', {
+    title: 'MetaWeather demo'
+  });
 });
 
 /**
- * GET /list
- *
- * This is a sample route demonstrating
- * a simple approach to error handling and testing
- * the global error handler. You most certainly want to
- * create different/better error handlers depending on
- * your use case.
+ * GET /error
  */
-routes.get('/list', (req, res, next) => {
-  const { title } = req.query;
+routes.get('/error', (req, res, next) => {
+  const {
+    title
+  } = req.query;
 
   if (title == null || title === '') {
     // You probably want to set the response HTTP status to 400 Bad Request
@@ -30,7 +30,9 @@ routes.get('/list', (req, res, next) => {
     return;
   }
 
-  res.render('index', { title });
+  res.render('index', {
+    title
+  });
 });
 
 export default routes;

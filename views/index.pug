@@ -1,5 +1,12 @@
 extends layout
 
 block content
-  h1= title
+
+  h1
+    i.fas.fa-sun
+    | #{title}
   p Welcome to #{title}
+  #output
+  //- img(src="https:/metaWeather.com/api/static/img/weather/sn.svg", alt="", srcset="")
+  footer data from 
+    a(href='https:/metaWeather.com') MetaWeather.com 

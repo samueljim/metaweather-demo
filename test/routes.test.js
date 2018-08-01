@@ -7,16 +7,18 @@ describe('GET /', () => {
   });
 });
 
-describe('GET /list', () => {
+describe('GET /error', () => {
   it('should render properly with valid parameters', async () => {
     await request(app)
-      .get('/list')
-      .query({ title: 'List title' })
+      .get('/error')
+      .query({
+        title: 'List title'
+      })
       .expect(200);
   });
 
   it('should error without a valid parameter', async () => {
-    await request(app).get('/list').expect(500);
+    await request(app).get('/error').expect(500);
   });
 });
 
