@@ -7,7 +7,26 @@ block content
     | #{title}
   p Welcome to #{title}
   #output
+  #table-wrapper
+    table#desc
+      tr
+        h3
+          select#city1(onchange="updateCity1()", value=(city1 ? city1 : "Sydney"))
+            option(value='Melbourne') Melbourne	
+            option(value='Brisbane') Brisbane
+            option(value='Sydney') Sydney
+            option(value='Adelaide') Adelaide
+            option(value='Perth') Perth
+      tr
+        td loading...
+      tr
+        td loading...
+    table
+      tr
+        h3#city2= city2 ? city2 : "Brisbane"
+      tr
+        td loading...
+      tr
+        td loading...
+      tr
   //- img(src="https:/metaWeather.com/api/static/img/weather/sn.svg", alt="", srcset="")
-  footer data from 
-    a(href='https:/metaWeather.com') MetaWeather.com 
-    

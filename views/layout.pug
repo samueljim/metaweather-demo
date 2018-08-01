@@ -14,7 +14,12 @@ html
     include ./nav.pug
     
     block content
+    br
+    footer data from 
+      a(href='https:/metaWeather.com') MetaWeather.com 
 
   block js
     script(src="/scripts/api.js")
+    //- script var weather = new MetaWeather;
+    script(src="/scripts/main.js")
 // samueljim.com

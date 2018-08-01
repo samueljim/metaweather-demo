@@ -4,6 +4,15 @@ import {
 
 const routes = Router();
 
+routes.get('/:city1/:city2', (req, res) => {
+  req.params.city1
+  res.render('index', {
+    title: 'MetaWeather demo',
+    city1: req.params.city1,
+    city2: req.params.city2
+  });
+});
+
 /**
  * GET home page
  */

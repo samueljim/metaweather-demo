@@ -1,6 +1,6 @@
 "use strict";
 
-var proxy, api, url;
+var proxy, api, url, weather;
 api = 'https://www.metaweather.com/api/';
 // i'm running a dedicated proxy to get around cross origin
 // This isn't ideal but in order for browsers headers to be removed it needs to hit a server
@@ -20,21 +20,21 @@ var MetaWeather = function () {
   this.proxy = proxy
   this.q = function (query) {
     url = (this.proxy + this.apiUrl) + query;
-    console.log('Reqesting ' + url);
+    console.info('Reqesting ' + url);
     return new Promise(function (resolve, reject) {
       var xhr = false;
       try {
         xhr = new XMLHttpRequest();
 
       } catch (e) {
-        console.log(e);
+        console.error(e);
       }
       if (xhr && "withCredentials" in xhr) {
-        console.log("it's a standard Cors request");
+        console.info("it's a standard Cors request");
         xhr.open("GET", url, true); // Standard Cors request
         xhr.onload = function () {
           if (this.status >= 200 && this.status < 300) {
-            resolve(xhr.response);
+            resolve(xhr);
           } else {
             reject({
               status: this.status,
@@ -51,7 +51,7 @@ var MetaWeather = function () {
         };
         xhr.send();
       } else if (typeof XDomainRequest != "undefined") {
-        console.log("it's a IE Cors request");
+        console.info("it's a IE Cors request");
         xhr = new XDomainRequest(); // IE Cors request
         xhr.open("GET", url);
         xhr.onload = function () {
@@ -76,7 +76,7 @@ var MetaWeather = function () {
         };
         xhr.send();
       } else {
-        console.log("there is no xhr support!");
+        console.error("there is no xhr support!");
       }
     });
   }
@@ -128,11 +128,11 @@ MetaWeather.prototype.location = function (location, date) {
   }
 };
 // creation of api query object
-var weather = new MetaWeather;
+
 // tests of api wrapper
-weather.search().query('sydney')
-  .then(function (res) {
-    console.log(res);
-  }).catch(function (err) {
-    console.error('Augh, there was an error!', err.statusText);
-  });
+// weather.search().query('sydney')
+//   .then(function (res) {
+//     console.info(res.response);
+//   }).catch(function (err) {
+//     console.error('Augh, there was an error!', err.statusText);
+//   });
