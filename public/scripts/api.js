@@ -1,11 +1,9 @@
 "use strict";
 
-var proxy, api, url, weather;
+var api, url;
 api = 'https://www.metaweather.com/api/';
 // i'm running a dedicated proxy to get around cross origin
 // This isn't ideal but in order for browsers headers to be removed it needs to hit a server
-proxy = ''
-proxy = 'http://proxy.samueljim.com/'
 
 // I attempted to use the following headers with no luck
 // xhr.withCredentials = true;
@@ -15,7 +13,7 @@ proxy = 'http://proxy.samueljim.com/'
 
 // MAIN --------------------------------------------------------
 // MetaWeather object is made for simple reused of the code
-var MetaWeather = function () {
+var MetaWeather = function (proxy) {
   this.apiUrl = api;
   this.proxy = proxy
   this.q = function (query) {

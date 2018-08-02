@@ -22,3 +22,16 @@ h5 {
 h1::before {
   padding-left: 20px;
 }
+
+#table-wrapper {
+  font-size: 2em;
+}
+
+select {
+  padding: 10px;
+  border: 4px;
+}
+
+.and {
+  padding-left: 10px;
+}

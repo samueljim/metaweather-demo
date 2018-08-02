@@ -5,28 +5,39 @@ block content
   h1
     i.fas.fa-sun
     | #{title}
-  p Welcome to #{title}
-  #output
+  h3#output Welcome to #{title}
   #table-wrapper
-    table#desc
-      tr
-        h3
-          select#city1(onchange="updateCity1()", value=(city1 ? city1 : "Sydney"))
-            option(value='Melbourne') Melbourne	
-            option(value='Brisbane') Brisbane
-            option(value='Sydney') Sydney
-            option(value='Adelaide') Adelaide
-            option(value='Perth') Perth
-      tr
-        td loading...
-      tr
-        td loading...
     table
       tr
-        h3#city2= city2 ? city2 : "Brisbane"
+        select#city1(onchange="updateCity('city1')", value=(city1 ? city1 : "Sydney"))
+          option(value='Sydney') Sydney
+          option(value='Melbourne') Melbourne	
+          option(value='Brisbane') Brisbane
+          option(value='Adelaide') Adelaide
+          option(value='Perth') Perth
+      span.pl-1 and 
       tr
-        td loading...
+        select#city2(onchange="updateCity('city2')", value=(city2 ? city2 : "Brisbane"))
+          option(value='Brisbane') Brisbane
+          option(value='Melbourne') Melbourne	
+          option(value='Sydney') Sydney
+          option(value='Adelaide') Adelaide
+          option(value='Perth') Perth
+    table
       tr
-        td loading...
+        td#city1Icon
       tr
-  //- img(src="https:/metaWeather.com/api/static/img/weather/sn.svg", alt="", srcset="")
+        td#city1Temp loading...
+        td#city1Type
+      tr
+        td#city1MaxMin      
+        td#city1Wind 
+    table
+      tr
+        td#city2Icon
+      tr
+        td#city2Temp loading...
+        td#city2Type
+      tr
+        td#city2MaxMin      
+        td#city2Wind 
