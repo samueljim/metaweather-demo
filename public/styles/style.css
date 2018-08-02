@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Roboto:300');
+@import url('https://fonts.googleapis.com/css?family=Enriqueta|Roboto:300');
 body {
   padding: 50px;
   font: 14px sans-serif;
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
-  background-color: #303f9f94;
+  background-color: #8e9416e3;
 }
 
 a {
@@ -16,7 +16,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Enriqueta', serif;
 }
 
 h1::before {

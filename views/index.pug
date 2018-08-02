@@ -9,22 +9,25 @@ block content
   #table-wrapper
     table
       tr
-        select#city1(onchange="updateCity('city1')", value=(city1 ? city1 : "Sydney"))
+        select#city1(onchange="updateCity('city1')")
           option(value='Sydney') Sydney
           option(value='Melbourne') Melbourne	
           option(value='Brisbane') Brisbane
           option(value='Adelaide') Adelaide
           option(value='Perth') Perth
-      span.pl-1 and 
+      span.and and 
       tr
-        select#city2(onchange="updateCity('city2')", value=(city2 ? city2 : "Brisbane"))
+        select#city2(onchange="updateCity('city2')")
           option(value='Brisbane') Brisbane
           option(value='Melbourne') Melbourne	
           option(value='Sydney') Sydney
           option(value='Adelaide') Adelaide
           option(value='Perth') Perth
+    hr
+    h3#city1Name
     table
       tr
+        td#city1I
         td#city1Icon
       tr
         td#city1Temp loading...
@@ -32,8 +35,11 @@ block content
       tr
         td#city1MaxMin      
         td#city1Wind 
+    hr
+    h3#city2Name
     table
       tr
+        td#city2I
         td#city2Icon
       tr
         td#city2Temp loading...

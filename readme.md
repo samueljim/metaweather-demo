@@ -1,9 +1,19 @@
 # metaweather demo
 
+All fuctional code is server side
+
+please use node to start the dev server
+
+```js
+npm i
+npm run dev
+```
+
+I made an API which is shown here
 after inporting api.js you can use this
 
 ```js
-var weather = new MetaWeather();
+var weather = new MetaWeather(proxy);
 
 // Use string query to location info and woeid
 weather
