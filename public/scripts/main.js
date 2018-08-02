@@ -1,10 +1,11 @@
-var weather = new MetaWeather('http://proxy.samueljim.com/');
+var weather = new MetaWeather('https://ztvoa.herokuapp.com/');
 // function to make js syntax better
 var $ = function (id) {
   return document.getElementById(id);
 };
 var temp1, temp2;
 
+// there was only 3 icons on font awesome which match weather so i used both the normal icons 
 var iconKey = {
   hc: '<i class="fas fa-cloud"></i>',
   c: '<i class="fas fa-sun"></i>',
@@ -115,7 +116,8 @@ function setup() {
   updateCity("city1");
   updateCity("city2");
 }
-// setup();
-
+setup();
 // update every 30 seconds
-var updating = window.setInterval(setup(), 1000);
+let timerId = setTimeout(function update() {
+  setup();
+}, 30000);
